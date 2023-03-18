@@ -1,9 +1,30 @@
 -- made by peeblyweeb
 -- thank you skidnik for telling me about getsynasset()
 
+-- place ids
+-- depths: 5735553160
+-- mainmenu: 4111023553
+-- etrean lum: 6032399813
+-- dungeon: 8668476218
+-- chime: 6832944305
+-- east lum: 6473861193
+
+DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832944305}
+
+
 game.Loaded:Wait()
 
-if (game.PlaceId) == 4111023553 or game.PlaceId == 6032399813
+local function has_value (list, value)
+    for i,v in pairs(list) do
+        if v == value then
+            return true
+        end
+    end
+
+    return false
+end
+
+if (has_value(DeepwokenPlaceIds, game.PlaceId) == true)
 then
     local already_exists = isfile("layer2bell.mp3")
     if (already_exists == false)
