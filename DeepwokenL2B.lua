@@ -1,3 +1,6 @@
+-- made by peeblyweeb
+-- thank you skidnik for telling me about getsynasset()
+
 game.Loaded:Wait()
 
 if (game.PlaceId) == 4111023553 or game.PlaceId == 6032399813
