@@ -8,7 +8,6 @@ then
     local already_exists = isfile("layer2bell.mp3")
     if (already_exists == false)
     then
-        print("downloading")
         local Response = syn.request({
             Url = "https://github.com/PeeblyWeeb/DeepwokenL2BMenuMusic/blob/main/layer2bell.mp3?raw=true",
             Method = "GET"
@@ -23,6 +22,4 @@ then
     do
         v.SoundId = layer2bell
     end
-else
-    print("Not in deepwoken!")
 end
