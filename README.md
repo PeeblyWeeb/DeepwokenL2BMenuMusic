@@ -8,3 +8,5 @@ script:
 ```lua
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PeeblyWeeb/DeepwokenL2BMenuMusic/main/DeepwokenL2B.lua'))()
 ```
+
+deepwoken: https://www.roblox.com/games/4111023553/Deepwoken-Verse-2
