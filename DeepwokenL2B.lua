@@ -1,3 +1,5 @@
+game.Loaded:Wait()
+
 if (game.PlaceId) == 4111023553 or game.PlaceId == 6032399813
 then
     local already_exists = isfile("layer2bell.mp3")
