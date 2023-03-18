@@ -14,18 +14,7 @@ DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832
 
 game.Loaded:Wait()
 
-local function has_value (list, value)
-    for i,v in pairs(list) do
-        if v == value then
-            return true
-        end
-    end
-
-    return false
-end
-
-if (has_value(DeepwokenPlaceIds, game.PlaceId) == true)
-then
+if table.find(DeepwokenPlaceIds,game.PlaceId) then
     local already_exists = isfile("layer2bell.mp3")
     if (already_exists == false)
     then
