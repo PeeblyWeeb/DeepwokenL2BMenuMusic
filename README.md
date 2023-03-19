@@ -2,7 +2,7 @@
 Replaces the deepwoken main menu music with https://www.youtube.com/watch?v=OccD-F1UNvE
 
 # THIS SCRIPT ONLY WORKS WITH SYNAPSE X!!!!!
-## PUT THE SCRIPT IN YOUR AUTOEXEC FOLDER OR ELSE IT WILL NOT RUN, IT HOOKS INTO GAME.LOADED
+### PUT THE SCRIPT IN YOUR AUTOEXEC FOLDER OR ELSE IT WILL NOT RUN!
 
 script:
 ```lua
