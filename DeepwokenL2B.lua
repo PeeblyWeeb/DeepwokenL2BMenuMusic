@@ -15,8 +15,7 @@ DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832
 game.Loaded:Wait()
 
 if table.find(DeepwokenPlaceIds,game.PlaceId) then
-    local already_exists = isfile("layer2bell.mp3")
-    if (already_exists == false)
+    if (isfile("layer2bell.mp3") == false)
     then
         local Response = syn.request({
             Url = "https://github.com/PeeblyWeeb/DeepwokenL2BMenuMusic/blob/main/layer2bell.mp3?raw=true",
