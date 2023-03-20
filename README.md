@@ -1,5 +1,6 @@
-# DeepwokenL2BMenuMusic
+# DeepwokenL2BMenuMusic+
 Replaces the deepwoken main menu music with https://www.youtube.com/watch?v=OccD-F1UNvE
+and also changes a few other sounds aswell but thats not important
 
 # THIS SCRIPT ONLY WORKS WITH SYNAPSE X!!!!!
 ### PUT THE SCRIPT IN YOUR AUTOEXEC FOLDER OR ELSE IT WILL NOT RUN!
