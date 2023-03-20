@@ -11,14 +11,14 @@ local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,866847621
 local RequiredAudios = {"MenuMusic.mp3", "ObtainingBell.mp3"}
 
 
--- game.Loaded:Wait()
+game.Loaded:Wait()
 
-function download(url) 
+function download(url, name) 
     local file = syn.request({
         Url = url,
         Method = "GET"
-    }).Body
-    return file
+    })
+    writefile(string.format("dwl2bas/%s", name), file.Body)
 end
 
 if table.find(DeepwokenPlaceIds,game.PlaceId) then
@@ -27,8 +27,8 @@ if table.find(DeepwokenPlaceIds,game.PlaceId) then
     end
     for i,Audio in pairs(RequiredAudios) do
         if isfile(string.format("dwl2bas/%s", Audio)) == false then
-            file = download(string.format("https://github.com/PeeblyWeeb/DeepwokenL2BMenuMusic/blob/main/audio/%s", Audio))
-            writefile(string.format("dwl2bas/%s", Audio), file)
+            print(Audio)
+            download(string.format("https://github.com/PeeblyWeeb/DeepwokenL2BMenuMusic/blob/main/audio/%s?raw=true", Audio), Audio)
         end
     end
 
@@ -41,5 +41,5 @@ if table.find(DeepwokenPlaceIds,game.PlaceId) then
     end
     game:WaitForChild("ReplicatedStorage")
     game.ReplicatedStorage.Assets:WaitForChild("Effects")
-    game:GetService("ReplicatedStorage").Assets.Effects.ResonanceActivate.Sound = NewObtainBell
+    game:GetService("ReplicatedStorage").Assets.Effects.ResonanceActivate.Sound.SoundId = NewObtainBell
 end
