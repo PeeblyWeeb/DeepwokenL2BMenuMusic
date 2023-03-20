@@ -13,8 +13,6 @@ local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,866847621
 
 game.Loaded:Wait()
 
-local plr = game.Players.LocalPlayer
-
 function download(url) 
     local Data = syn.request({
         Url = url,
@@ -32,7 +30,7 @@ if table.find(DeepwokenPlaceIds,game.PlaceId) then
         writefile("dwl2bas/MenuMusic.mp3", file)
     end
 
-    local MenuContours = plr.PlayerGui.LoadingGui.LoadingGui.Music:GetChildren()
+    local MenuContours = game.Players.LocalPlayer.PlayerGui.LoadingGui.LoadingGui.Music:GetChildren()
     local NewMenuMusic = getsynasset("dwl2bas/MenuMusic.mp3")
     for i,Contour in pairs(MenuContours) do
         Contour.SoundId = NewMenuMusic
