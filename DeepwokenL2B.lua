@@ -8,31 +8,39 @@
 -- east lum: 6473861193
 
 local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832944305}
+local RequiredAudios = {"MenuMusic.mp3", "ObtainingBell.mp3"}
 local Player = game.Players.LocalPlayer
 
 
 -- game.Loaded:Wait()
 
 function download(url) 
-    local Data = syn.request({
+    local file = syn.request({
         Url = url,
         Method = "GET"
     }).Body
-    return Data
+    return file
 end
 
 if table.find(DeepwokenPlaceIds,game.PlaceId) then
     if isfolder("dwl2bas") == false then
         makefolder("dwl2bas")
     end
-    if isfile("dwl2bas/MenuMusic.mp3") == false then
-        file = download("https://github.com/PeeblyWeeb/DeepwokenL2BMenuMusic/blob/main/audio/MenuMusic.mp3")
-        writefile("dwl2bas/MenuMusic.mp3", file)
+    for i,Audio in pairs(RequiredAudios) do
+        if isfile(string.format("dwl2bas/%s", Audio)) == false then
+            file = download(string.format("https://github.com/PeeblyWeeb/DeepwokenL2BMenuMusic/blob/main/audio/%s", Audio))
+            writefile(string.format("dwl2bas/%s", Audio), file)
+        end
     end
 
     local MenuContours = Player.PlayerGui.LoadingGui.LoadingGui.Music:GetChildren()
     local NewMenuMusic = getsynasset("dwl2bas/MenuMusic.mp3")
+    local NewObtainBell = getsynasset("dwl2bas/ObtainBell.mp3")
+
     for i,Contour in pairs(MenuContours) do
         Contour.SoundId = NewMenuMusic
     end
+
+    game:WaitForChild("ReplicatedStorage")
+    print("repstorage found")
 end
