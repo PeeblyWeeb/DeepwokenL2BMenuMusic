@@ -11,7 +11,7 @@ local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,866847621
 local RequiredAudios = {"MenuMusic.mp3", "ObtainingBell.mp3"}
 
 
--- game.Loaded:Wait()
+game.Loaded:Wait()
 
 function download(url) 
     local file = syn.request({
