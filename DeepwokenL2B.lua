@@ -8,7 +8,7 @@
 -- east lum: 6473861193
 
 local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832944305}
-local RequiredAudios = {"MenuMusic.mp3", "ObtainingBell.mp3"}
+local RequiredAudios = {"MenuMusic.mp3", "ObtainBell.mp3"}
 
 
 game.Loaded:Wait()
