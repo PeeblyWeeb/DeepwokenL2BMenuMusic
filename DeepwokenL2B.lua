@@ -8,10 +8,12 @@
 -- east lum: 6473861193
 
 local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832944305}
-local Player = game.Players.LocalPlayer
+
 
 
 -- game.Loaded:Wait()
+
+local Player = game.Players.LocalPlayer
 
 function download(url) 
     local Data = syn.request({
