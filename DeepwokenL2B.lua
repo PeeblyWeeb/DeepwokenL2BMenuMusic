@@ -8,7 +8,7 @@
 -- east lum: 6473861193
 
 local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832944305}
-local RequiredAudios = {"MenuMusic.mp3", "ObtainBell.mp3"}
+local RequiredAudios = {"MenuMusic.mp3"}
 
 
 game.Loaded:Wait()
@@ -34,12 +34,8 @@ if table.find(DeepwokenPlaceIds,game.PlaceId) then
 
     local MenuContours = game.Players.LocalPlayer.PlayerGui.LoadingGui.LoadingGui.Music:GetChildren()
     local NewMenuMusic = getsynasset("dwl2bas/MenuMusic.mp3")
-    local NewObtainBell = getsynasset("dwl2bas/ObtainBell.mp3")
 
     for i,Contour in pairs(MenuContours) do
         Contour.SoundId = NewMenuMusic
     end
-    game:WaitForChild("ReplicatedStorage")
-    game.ReplicatedStorage.Assets:WaitForChild("Effects")
-    game:GetService("ReplicatedStorage").Assets.Effects.ResonanceActivate.Sound.SoundId = NewObtainBell
 end
