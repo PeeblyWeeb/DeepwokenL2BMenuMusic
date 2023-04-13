@@ -1,3 +1,5 @@
+local rs = game:GetService("RunService")
+
 -- thank you skidnik for telling me about getsynasset()
 
 -- depths: 5735553160
@@ -8,10 +10,11 @@
 -- east lum: 6473861193
 
 local DeepwokenPlaceIds = {4111023553,6032399813,6473861193,5735553160,8668476218,6832944305}
-local RequiredAudios = {"MenuMusic.mp3"}
+local RequiredAudios = {"MenuMusic.mp3","Ferryman.mp3"}
 
 
 game.Loaded:Wait()
+
 
 function download(url, name) 
     local file = syn.request({
@@ -37,4 +40,23 @@ if table.find(DeepwokenPlaceIds,game.PlaceId) then
     for i,Contour in pairs(MenuContours) do
         Contour.SoundId = NewMenuMusic
     end
+    if game.PlaceId == 6473861193 then
+        local PlayerGui = game:GetService("Players").LocalPlayer.PlayerGui
+        PlayerGui:WaitForChild("WorldClient")
+        local tracks = PlayerGui.WorldClient.Tracks
+        local combat = tracks.Combat
+        local toreplace = "rbxassetid://5995252439"
+        local NewAudio = getsynasset("dwl2bas/Ferryman.mp3")
+        rs.Heartbeat:Connect(function ()
+            for i,v in pairs(tracks:GetChildren()) do 
+                if v.SoundId == toreplace then
+                    print("i found the funny uh audio thing i think i uh uh here uh take this yeah!")
+                    print(v)
+                    v.SoundId = NewAudio
+                end
+            end
+        end)
+    
+    end
 end
+
