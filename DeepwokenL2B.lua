@@ -27,7 +27,6 @@ if table.find(DeepwokenPlaceIds,game.PlaceId) then
     end
     for i,Audio in pairs(RequiredAudios) do
         if isfile(string.format("dwl2bas/%s", Audio)) == false then
-            print(Audio)
             download(string.format("https://github.com/PeeblyWeeb/DeepwokenL2BMenuMusic/blob/main/audio/%s?raw=true", Audio), Audio)
         end
     end
