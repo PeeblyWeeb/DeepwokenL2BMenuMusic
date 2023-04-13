@@ -56,7 +56,6 @@ if table.find(DeepwokenPlaceIds,game.PlaceId) then
                 end
             end
         end)
-    
     end
 end
 
